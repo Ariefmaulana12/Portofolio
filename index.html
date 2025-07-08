@@ -4,89 +4,285 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio Mewah</title>
-  <script src="https://cdn.tailwindcss.com "></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
       font-family: 'Inter', sans-serif;
     }
-    .gradient-text {
-      background: linear-gradient(90deg, #3b82f6, #2563eb); /* Blue gradient */
+    
+    /* Luxury gradient backgrounds with blue, pink, white */
+    .gradient-bg-primary {
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 25%, #ec4899 50%, #f472b6 75%, #fce7f3 100%);
+    }
+    
+    .gradient-bg-secondary {
+      background: linear-gradient(135deg, #fce7f3 0%, #f8fafc 25%, #e0e7ff 50%, #ddd6fe 75%, #f3e8ff 100%);
+    }
+    
+    .gradient-text-luxury {
+      background: linear-gradient(135deg, #1e40af, #3b82f6, #ec4899);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
+    
+    .gradient-text-pink {
+      background: linear-gradient(135deg, #ec4899, #f472b6, #fbbf24);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
-    .animate-fadeIn {
-      animation: fadeIn 0.3s ease-out forwards;
+    
+    /* Ornate background patterns */
+    .ornate-bg {
+      background-image: 
+        radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+        linear-gradient(45deg, transparent 45%, rgba(255, 255, 255, 0.05) 50%, transparent 55%),
+        linear-gradient(-45deg, transparent 45%, rgba(255, 255, 255, 0.05) 50%, transparent 55%);
+      background-size: 60px 60px, 80px 80px, 40px 40px, 40px 40px;
+      background-position: 0 0, 30px 30px, 0 0, 20px 20px;
     }
+    
+    .ornate-pattern {
+      background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(59, 130, 246, 0.05) 10px, rgba(59, 130, 246, 0.05) 20px),
+        repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(236, 72, 153, 0.05) 10px, rgba(236, 72, 153, 0.05) 20px);
+    }
+    
+    /* Luxury card styles */
+    .luxury-card {
+      background: linear-gradient(145deg, #ffffff 0%, #fef7ff 50%, #fce7f3 100%);
+      border: 2px solid transparent;
+      background-clip: padding-box;
+      box-shadow: 
+        0 20px 25px -5px rgba(236, 72, 153, 0.1),
+        0 10px 10px -5px rgba(59, 130, 246, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      position: relative;
+    }
+    
+    .luxury-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: inherit;
+      padding: 2px;
+      background: linear-gradient(135deg, #3b82f6, #ec4899, #f472b6);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      z-index: -1;
+    }
+    
+    .luxury-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 
+        0 32px 64px -12px rgba(236, 72, 153, 0.25),
+        0 20px 25px -5px rgba(59, 130, 246, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+    
+    /* Luxury button styles */
+    .btn-luxury {
+      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 25%, #ec4899 75%, #f472b6 100%);
+      box-shadow: 
+        0 4px 15px 0 rgba(236, 72, 153, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(30, 64, 175, 0.3);
+    }
+    
+    .btn-luxury:hover {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 25%, #be185d 75%, #ec4899 100%);
+      box-shadow: 
+        0 8px 25px 0 rgba(236, 72, 153, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+    
+    /* Luxury header */
+    .luxury-header {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(252, 231, 243, 0.95) 50%, rgba(248, 250, 252, 0.95) 100%);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(236, 72, 153, 0.1);
+      box-shadow: 0 4px 6px -1px rgba(236, 72, 153, 0.05);
+    }
+    
+    /* Luxury modal */
+    .luxury-modal {
+      background: linear-gradient(145deg, #ffffff 0%, #fef7ff 50%, #f8fafc 100%);
+      border: 2px solid rgba(236, 72, 153, 0.1);
+      box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+    
+    /* Animations */
+    @keyframes fadeInLuxury {
+      from { 
+        opacity: 0; 
+        transform: scale(0.95) translateY(20px); 
+      }
+      to { 
+        opacity: 1; 
+        transform: scale(1) translateY(0); 
+      }
+    }
+    
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .animate-fadeInLuxury {
+      animation: fadeInLuxury 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .shimmer {
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      background-size: 200% 100%;
+      animation: shimmer 2s infinite;
+    }
+    
+    /* Luxury section backgrounds */
+    .section-luxury-1 {
+      background: linear-gradient(135deg, #fef7ff 0%, #f8fafc 25%, #e0e7ff 50%, #fce7f3 75%, #ffffff 100%);
+    }
+    
+    .section-luxury-2 {
+      background: linear-gradient(135deg, #ffffff 0%, #fce7f3 25%, #e0e7ff 50%, #f8fafc 75%, #fef7ff 100%);
+    }
+    
+    /* Profile image luxury border */
+    .profile-luxury {
+      border: 4px solid transparent;
+      background: linear-gradient(135deg, #3b82f6, #ec4899, #f472b6) border-box;
+      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+    }
+    
     .modal-content {
-      /* This helps center the modal and gives it a max-width */
       max-width: 90%;
-      max-height: 90vh; /* Limits height to viewport height */
-      overflow-y: auto; /* Adds scroll if content is too long */
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    
+    /* Custom scrollbar for modal */
+    .modal-content::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    .modal-content::-webkit-scrollbar-track {
+      background: #f1f5f9;
+      border-radius: 4px;
+    }
+    
+    .modal-content::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #3b82f6, #ec4899);
+      border-radius: 4px;
+    }
+    
+    .modal-content::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(135deg, #1e40af, #be185d);
+    }
+    
+    /* Mission item styles */
+    .mission-item {
+      background: linear-gradient(145deg, #ffffff 0%, #fef7ff 100%);
+      border-left: 4px solid transparent;
+      background-clip: padding-box;
+      position: relative;
+    }
+    
+    .mission-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(135deg, #3b82f6, #ec4899);
     }
   </style>
 </head>
-<body class="bg-blue-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800">
 
-  <header class="sticky top-0 z-50 bg-white shadow-lg">
+  <header class="sticky top-0 z-50 luxury-header">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold gradient-text">Portfolio</h1>
+      <h1 class="text-3xl font-bold gradient-text-luxury">Portfolio</h1>
       <nav class="space-x-8 hidden md:flex">
-        <a href="#about" class="text-gray-700 hover:text-blue-600 transition duration-300 ease-in-out font-medium">Tentang</a>
-        <a href="#portfolio" class="text-gray-700 hover:text-blue-600 transition duration-300 ease-in-out font-medium">Portofolio</a>
-        <a href="#other-projects" class="text-gray-700 hover:text-blue-600 transition duration-300 ease-in-out font-medium">Galeri Proyek</a>
+        <a href="#about" class="text-gray-700 hover:text-pink-600 transition duration-300 ease-in-out font-medium relative group">
+          Tentang
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#vision-mission" class="text-gray-700 hover:text-pink-600 transition duration-300 ease-in-out font-medium relative group">
+          Visi & Misi
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#portfolio" class="text-gray-700 hover:text-pink-600 transition duration-300 ease-in-out font-medium relative group">
+          Portofolio
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+        </a>
       </nav>
     </div>
   </header>
 
-  <section class="bg-gradient-to-br from-blue-100 to-white py-28">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-4xl md:text-6xl font-extrabold mb-6 text-gray-900 leading-tight">Wujudkan <span class="gradient-text">Ide Digital</span> Anda</h2>
-      <p class="text-lg text-gray-700 mb-10 max-w-2xl mx-auto">
+  <section class="gradient-bg-primary py-32 relative overflow-hidden ornate-bg">
+    <div class="absolute inset-0 bg-white/10"></div>
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+      <h2 class="text-5xl md:text-7xl font-extrabold mb-8 text-white leading-tight animate-float">
+        Wujudkan <span class="gradient-text-pink">Ide Digital</span> Anda
+      </h2>
+      <p class="text-xl text-pink-100 mb-12 max-w-2xl mx-auto leading-relaxed">
         Kami adalah tim kreatif pengembang dan desainer yang berdedikasi untuk menciptakan solusi digital inovatif dan menarik.
       </p>
-      <a href="#about"
-         class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition transform hover:scale-105 shadow-lg">
+      <a href="#about" class="btn-luxury text-white px-10 py-5 rounded-full text-lg font-semibold transition-all duration-300 inline-block">
         Lihat Profil Kami
       </a>
     </div>
   </section>
 
-  <section id="about" class="py-24 bg-white">
+  <section id="about" class="py-28 section-luxury-1 ornate-pattern">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-16 text-gray-900">Tentang Kami</h2>
+      <h2 class="text-5xl font-bold text-center mb-20 gradient-text-luxury">Tentang Kami</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 
-        <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-blue-100">
-          <img src="foto-arief.jpg" alt="Profile Arief Maulana" class="w-36 h-36 rounded-full mx-auto object-cover mb-8 border-4 border-blue-400 shadow-md"/>
-          <h3 class="text-3xl font-semibold text-center mb-2 text-gray-900">Arief Maulana</h3>
-          <p class="text-blue-600 font-medium text-center mb-6 text-lg">Programer/Desainer UI/UX</p>
-          <p class="text-gray-700 mb-6 text-center leading-relaxed">
+        <div class="luxury-card p-10 rounded-2xl transition-all duration-500 transform hover:scale-105">
+          <img src="foto-arief.jpg" alt="Profile Arief Maulana" class="w-40 h-40 rounded-full mx-auto object-cover mb-8 profile-luxury shadow-2xl"/>
+          <h3 class="text-3xl font-bold text-center mb-3 text-gray-900">Arief Maulana</h3>
+          <p class="gradient-text-luxury font-semibold text-center mb-6 text-lg">Programer/Desainer UI/UX</p>
+          <p class="text-gray-700 mb-8 text-center leading-relaxed">
             Fokus saya pada kinerja dan pengalaman pengguna menunjukkan bahwa saya tidak hanya peduli pada tampilan, tetapi juga pada bagaimana pengguna berinteraksi dengan produk digital dan seberapa efisiennya.
           </p>
-          <div class="flex justify-center mt-6">
-            <button onclick="openModal('arief')"
-                   class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-7 py-3 rounded-full font-semibold transition transform hover:scale-105 shadow-md">
+          <div class="flex justify-center mt-8">
+            <button onclick="openModal('arief')" class="btn-luxury text-white px-8 py-4 rounded-full font-semibold transition-all duration-300">
               Lihat Detail
             </button>
           </div>
         </div>
 
-        <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-blue-100">
-          <img src="foto-inay.jpg" alt="Profile Inayah Ainina Mawardi" class="w-36 h-36 rounded-full mx-auto object-cover mb-8 border-4 border-blue-400 shadow-md"/>
-          <h3 class="text-3xl font-semibold text-center mb-2 text-gray-900">Inayah Ainina Mawardi</h3>
-          <p class="text-blue-600 font-medium text-center mb-6 text-lg">Programer</p>
-          <p class="text-gray-700 mb-6 text-center leading-relaxed">
+        <div class="luxury-card p-10 rounded-2xl transition-all duration-500 transform hover:scale-105">
+          <img src="foto-inay.jpg" alt="Profile Inayah Ainina Mawardi" class="w-40 h-40 rounded-full mx-auto object-cover mb-8 profile-luxury shadow-2xl"/>
+          <h3 class="text-3xl font-bold text-center mb-3 text-gray-900">Inayah Ainina Mawardi</h3>
+          <p class="gradient-text-luxury font-semibold text-center mb-6 text-lg">Programer</p>
+          <p class="text-gray-700 mb-8 text-center leading-relaxed">
             saya adalah seorang programmer, seorang inovator yang tak kenal lelah dalam mencari cara baru untuk meningkatkan efisiensi dan fungsionalitas. Setiap bug adalah tantangan, dan setiap fitur baru adalah kanvas untuk kreativitas saya
           </p>
-          <div class="flex justify-center mt-6">
-            <button onclick="openModal('inayah')"
-                   class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-7 py-3 rounded-full font-semibold transition transform hover:scale-105 shadow-md">
+          <div class="flex justify-center mt-8">
+            <button onclick="openModal('inayah')" class="btn-luxury text-white px-8 py-4 rounded-full font-semibold transition-all duration-300">
               Lihat Detail
             </button>
           </div>
@@ -96,31 +292,146 @@
     </div>
   </section>
 
-  <div id="modal-arief" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50 p-4">
-    <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-8 relative animate-fadeIn modal-content border border-blue-200">
-      <button onclick="closeModal('arief')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-3xl font-semibold transition">&times;</button>
-
-      <div class="text-center mb-6">
-        <img src="foto-arief.jpg" alt="Profile Arief" class="w-36 h-36 rounded-full mx-auto object-cover border-4 border-blue-400 shadow-lg mb-4"/>
-        <h3 class="text-4xl font-extrabold text-gray-900 leading-tight">Arief Maulana</h3>
-        <p class="text-blue-600 font-medium text-xl mt-2">Frontend Developer</p>
+  <!-- Section Visi & Misi -->
+  <section id="vision-mission" class="py-28 section-luxury-2 ornate-bg">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-5xl font-bold text-center mb-20 gradient-text-luxury">Visi & Misi Kami</h2>
+      
+      <!-- Visi -->
+      <div class="mb-16">
+        <div class="luxury-card p-12 rounded-2xl text-center">
+          <div class="mb-8">
+            <i class="fas fa-eye text-6xl gradient-text-pink mb-6"></i>
+            <h3 class="text-4xl font-bold gradient-text-luxury mb-6">Visi</h3>
+          </div>
+          <p class="text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
+            Menjadi pengembang terkemuka yang menciptakan solusi inovatif dan berkelanjutan, dengan menggabungkan keahlian dalam pemrograman dan desain untuk membangun proyek yang tidak hanya fungsional, tetapi juga estetis dan ramah pengguna, demi memberikan dampak positif bagi masyarakat dan industri teknologi.
+          </p>
+        </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
-        <div class="bg-blue-50 p-6 rounded-lg shadow-inner border border-blue-100">
-          <h4 class="font-bold text-xl mb-3 text-gray-900 border-b pb-2 border-blue-200">Tentang Diri</h4>
-          <ul class="space-y-2 text-gray-700 text-base">
+      <!-- Misi -->
+      <div>
+        <div class="text-center mb-12">
+          <i class="fas fa-bullseye text-6xl gradient-text-pink mb-6"></i>
+          <h3 class="text-4xl font-bold gradient-text-luxury">Misi</h3>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="mission-item p-8 rounded-xl shadow-lg">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">1</div>
+              </div>
+              <div>
+                <h4 class="font-bold text-xl mb-3 gradient-text-luxury">Menciptakan Solusi Inovatif</h4>
+                <p class="text-gray-700 leading-relaxed">Mengembangkan aplikasi dan platform dengan pemrograman yang efisien serta desain intuitif untuk memenuhi kebutuhan pengguna dan meningkatkan kualitas hidup mereka.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mission-item p-8 rounded-xl shadow-lg">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">2</div>
+              </div>
+              <div>
+                <h4 class="font-bold text-xl mb-3 gradient-text-luxury">Fokus pada Kolaborasi Tim</h4>
+                <p class="text-gray-700 leading-relaxed">Menjalin komunikasi yang terbuka dan efektif antara programmer dan desainer untuk memastikan integrasi yang mulus antara kode dan tampilan antarmuka (UI).</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mission-item p-8 rounded-xl shadow-lg">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">3</div>
+              </div>
+              <div>
+                <h4 class="font-bold text-xl mb-3 gradient-text-luxury">Mengutamakan Pengalaman Pengguna</h4>
+                <p class="text-gray-700 leading-relaxed">Merancang dan mengembangkan proyek yang tidak hanya berfungsi dengan baik, tetapi juga memberikan pengalaman pengguna yang luar biasa.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mission-item p-8 rounded-xl shadow-lg">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">4</div>
+              </div>
+              <div>
+                <h4 class="font-bold text-xl mb-3 gradient-text-luxury">Mengadaptasi Teknologi Terbaru</h4>
+                <p class="text-gray-700 leading-relaxed">Secara terus-menerus memperbarui pengetahuan tentang tren terbaru dalam dunia pengembangan perangkat lunak dan desain.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mission-item p-8 rounded-xl shadow-lg">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">5</div>
+              </div>
+              <div>
+                <h4 class="font-bold text-xl mb-3 gradient-text-luxury">Menerapkan Praktik Terbaik</h4>
+                <p class="text-gray-700 leading-relaxed">Menggunakan metode pengembangan yang terbukti efektif, seperti Agile dan Design Thinking, untuk meningkatkan kualitas kode dan desain.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mission-item p-8 rounded-xl shadow-lg">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">6</div>
+              </div>
+              <div>
+                <h4 class="font-bold text-xl mb-3 gradient-text-luxury">Membangun Produk Berkelanjutan</h4>
+                <p class="text-gray-700 leading-relaxed">Berkomitmen untuk menciptakan solusi yang dapat bertahan lama, mudah dipelihara, dan terus berkembang seiring waktu.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mission-item p-8 rounded-xl shadow-lg md:col-span-2">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">7</div>
+              </div>
+              <div>
+                <h4 class="font-bold text-xl mb-3 gradient-text-luxury">Menciptakan Dampak Positif</h4>
+                <p class="text-gray-700 leading-relaxed">Berfokus pada pengembangan proyek yang memberikan dampak sosial yang positif, serta memenuhi standar etika dalam setiap keputusan pengembangan, untuk kontribusi yang lebih besar dalam industri teknologi dan masyarakat.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Arief -->
+  <div id="modal-arief" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+    <div class="luxury-modal rounded-2xl max-w-4xl w-full p-10 relative animate-fadeInLuxury modal-content">
+      <button onclick="closeModal('arief')" class="absolute top-6 right-6 text-gray-500 hover:text-gray-800 text-3xl font-bold transition-all duration-300 hover:rotate-90">&times;</button>
+
+      <div class="text-center mb-8">
+        <img src="foto-arief.jpg" alt="Profile Arief" class="w-40 h-40 rounded-full mx-auto object-cover profile-luxury shadow-2xl mb-6"/>
+        <h3 class="text-4xl font-extrabold gradient-text-luxury leading-tight">Arief Maulana</h3>
+        <p class="text-pink-600 font-semibold text-xl mt-3">Frontend Developer</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-8">
+        <div class="bg-gradient-to-br from-pink-50 to-white p-8 rounded-xl shadow-inner border border-pink-100">
+          <h4 class="font-bold text-2xl mb-4 gradient-text-luxury border-b pb-3 border-pink-200">Tentang Diri</h4>
+          <ul class="space-y-3 text-gray-700 text-base">
             <li><strong>Jurusan:</strong> Sistem Informasi</li>
             <li><strong>Umur:</strong> 22 tahun</li>
-            <li><i class="far fa-envelope mr-2 text-blue-500"></i><a href="mailto:arief.maulana@example.com" class="text-blue-600 hover:underline">maulanaarip1234@gmail.com</a></li>
-            <li><i class="fab fa-linkedin mr-2 text-blue-500"></i><a href="https://www.linkedin.com/in/arief-maulana-b2a6a6353/" target="_blank" class="text-blue-600 hover:underline">https://www.linkedin.com/in/arief-maulana-b2a6a6353/</a></li>
-            <li><p class="mt-2 leading-relaxed">saya adalah seorang developer dan desainer yang memiliki minat kuat pada teknologi serta desain antarmuka interaktif dan responsif. Fokus Anda pada kinerja dan pengalaman pengguna menunjukkan bahwa Anda tidak hanya peduli pada tampilan, tetapi juga pada bagaimana pengguna berinteraksi dengan produk digital dan seberapa efisiennya.Ini adalah kombinasi keahlian yang sangat dicari di dunia teknologi saat ini, karena menjembatani kesenjangan antara aspek teknis pengembangan dan aspek kreatif desain.</p></li>
+            <li><i class="far fa-envelope mr-3 text-pink-500"></i><a href="mailto:arief.maulana@example.com" class="text-pink-600 hover:underline">maulanaarip1234@gmail.com</a></li>
+            <li><i class="fab fa-linkedin mr-3 text-blue-500"></i><a href="https://www.linkedin.com/in/arief-maulana-b2a6a6353/" target="_blank" class="text-blue-600 hover:underline">LinkedIn Profile</a></li>
+            <li><p class="mt-4 leading-relaxed text-gray-600">saya adalah seorang developer dan desainer yang memiliki minat kuat pada teknologi serta desain antarmuka interaktif dan responsif.</p></li>
           </ul>
         </div>
 
-        <div class="bg-blue-50 p-6 rounded-lg shadow-inner border border-blue-100">
-          <h4 class="font-bold text-xl mb-3 text-gray-900 border-b pb-2 border-blue-200">Pengalaman</h4>
-          <ul class="list-disc pl-6 space-y-2 text-gray-700 text-base">
+        <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl shadow-inner border border-blue-100">
+          <h4 class="font-bold text-2xl mb-4 gradient-text-luxury border-b pb-3 border-blue-200">Pengalaman</h4>
+          <ul class="list-disc pl-6 space-y-3 text-gray-700 text-base">
             <li>Magang sebagai Frontend Developer di PT. Mustam Karya Mandiri selama 2 bulan (2022)</li>
             <li>Memimpin pengembangan beberapa aplikasi berbasis React dan Next.js</li>
             <li>Berpengalaman dalam UI testing, debugging, dan optimisasi performa web</li>
@@ -129,53 +440,54 @@
         </div>
       </div>
 
-      <h4 class="font-bold text-2xl mt-6 mb-4 text-gray-900 text-center">Sertifikat</h4>
+      <h4 class="font-bold text-3xl mt-8 mb-6 gradient-text-luxury text-center">Sertifikat</h4>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md border border-blue-100">
-          <img src="sertifikat1.png" alt="Sertifikat React" class="rounded shadow mb-3" />
-          <p class="text-sm text-gray-700 text-center">Sertifikasi resmi dari Meta untuk pengembangan antarmuka menggunakan React (2023).</p>
+        <div class="luxury-card p-6 rounded-xl transition-all duration-300">
+          <img src="sertifikat1.png" alt="Sertifikat React" class="rounded-lg shadow-lg mb-4 w-full" />
+          <p class="text-sm text-gray-700 text-center leading-relaxed">Sertifikasi resmi dari Meta untuk pengembangan antarmuka menggunakan React (2023).</p>
         </div>
-        <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md border border-blue-100">
-          <img src="sertifikat2.png" alt="Sertifikat Tailwind" class="rounded shadow mb-3" />
-          <p class="text-sm text-gray-700 text-center">Sertifikasi kemahiran dalam penggunaan Tailwind CSS untuk desain responsif (2024).</p>
+        <div class="luxury-card p-6 rounded-xl transition-all duration-300">
+          <img src="sertifikat2.png" alt="Sertifikat Tailwind" class="rounded-lg shadow-lg mb-4 w-full" />
+          <p class="text-sm text-gray-700 text-center leading-relaxed">Sertifikasi kemahiran dalam penggunaan Tailwind CSS untuk desain responsif (2024).</p>
         </div>
-        <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md border border-blue-100">
-          <img src="sertifikat3.png" alt="Sertifikat JavaScript" class="rounded shadow mb-3" />
-          <p class="text-sm text-gray-700 text-center">Sertifikasi penguasaan JavaScript tingkat lanjut (2023).</p>
+        <div class="luxury-card p-6 rounded-xl transition-all duration-300">
+          <img src="sertifikat3.png" alt="Sertifikat JavaScript" class="rounded-lg shadow-lg mb-4 w-full" />
+          <p class="text-sm text-gray-700 text-center leading-relaxed">Sertifikasi penguasaan JavaScript tingkat lanjut (2023).</p>
         </div>
-        <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md border border-blue-100">
-          <img src="sertifikat4.png" alt="Sertifikat Tailwind" class="rounded shadow mb-3" />
-          <p class="text-sm text-gray-700 text-center">Sertifikasi kemahiran dalam penggunaan Tailwind CSS untuk desain responsif (2024).</p>
+        <div class="luxury-card p-6 rounded-xl transition-all duration-300">
+          <img src="sertifikat4.png" alt="Sertifikat Tailwind" class="rounded-lg shadow-lg mb-4 w-full" />
+          <p class="text-sm text-gray-700 text-center leading-relaxed">Sertifikasi kemahiran dalam penggunaan Tailwind CSS untuk desain responsif (2024).</p>
         </div>
       </div>
     </div>
   </div>
 
-  <div id="modal-inayah" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50 p-4">
-    <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-8 relative animate-fadeIn modal-content border border-blue-200">
-      <button onclick="closeModal('inayah')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-3xl font-semibold">&times;</button>
+  <!-- Modal Inayah -->
+  <div id="modal-inayah" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+    <div class="luxury-modal rounded-2xl max-w-4xl w-full p-10 relative animate-fadeInLuxury modal-content">
+      <button onclick="closeModal('inayah')" class="absolute top-6 right-6 text-gray-500 hover:text-gray-800 text-3xl font-bold transition-all duration-300 hover:rotate-90">&times;</button>
 
-      <div class="text-center mb-6">
-        <img src="foto-inay.jpg" alt="Profile Inayah" class="w-36 h-36 rounded-full mx-auto object-cover border-4 border-blue-400 shadow-lg mb-4"/>
-        <h3 class="text-4xl font-extrabold text-gray-900 leading-tight">Inayah Ainina Mawardi</h3>
-        <p class="text-blue-600 font-medium text-xl mt-2">Programer</p>
+      <div class="text-center mb-8">
+        <img src="foto-inay.jpg" alt="Profile Inayah" class="w-40 h-40 rounded-full mx-auto object-cover profile-luxury shadow-2xl mb-6"/>
+        <h3 class="text-4xl font-extrabold gradient-text-luxury leading-tight">Inayah Ainina Mawardi</h3>
+        <p class="text-pink-600 font-semibold text-xl mt-3">Programer</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
-        <div class="bg-blue-50 p-6 rounded-lg shadow-inner border border-blue-100">
-          <h4 class="font-bold text-xl mb-3 text-gray-900 border-b pb-2 border-blue-200">Tentang Diri</h4>
-          <ul class="space-y-2 text-gray-700 text-base">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-8">
+        <div class="bg-gradient-to-br from-pink-50 to-white p-8 rounded-xl shadow-inner border border-pink-100">
+          <h4 class="font-bold text-2xl mb-4 gradient-text-luxury border-b pb-3 border-pink-200">Tentang Diri</h4>
+          <ul class="space-y-3 text-gray-700 text-base">
             <li><strong>Jurusan:</strong> Sistem Informasi</li>
             <li><strong>Umur:</strong> 21 tahun</li>
-            <li><i class="far fa-envelope mr-2 text-blue-500"></i><a href="mailto:inayah.ainina@example.com" class="text-blue-600 hover:underline">inayahmawardi3@gmail.com</a></li>
-            <li><i class="fab fa-linkedin mr-2 text-blue-500"></i><a href="https://linkedin.com/in/inayahainina" target="_blank" class="text-blue-600 hover:underline">https://www.linkedin.com/in/inayah-ainina-mawardi</a></li>
-            <li><p class="mt-2 leading-relaxed">saya adalah seorang programmer, seorang inovator yang tak kenal lelah dalam mencari cara baru untuk meningkatkan efisiensi dan fungsionalitas.</p></li>
+            <li><i class="far fa-envelope mr-3 text-pink-500"></i><a href="mailto:inayah.ainina@example.com" class="text-pink-600 hover:underline">inayahmawardi3@gmail.com</a></li>
+            <li><i class="fab fa-linkedin mr-3 text-blue-500"></i><a href="https://linkedin.com/in/inayahainina" target="_blank" class="text-blue-600 hover:underline">LinkedIn Profile</a></li>
+            <li><p class="mt-4 leading-relaxed text-gray-600">saya adalah seorang programmer, seorang inovator yang tak kenal lelah dalam mencari cara baru untuk meningkatkan efisiensi dan fungsionalitas.</p></li>
           </ul>
         </div>
 
-        <div class="bg-blue-50 p-6 rounded-lg shadow-inner border border-blue-100">
-          <h4 class="font-bold text-xl mb-3 text-gray-900 border-b pb-2 border-blue-200">Pengalaman</h4>
-          <ul class="list-disc pl-6 space-y-2 text-gray-700 text-base">
+        <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl shadow-inner border border-blue-100">
+          <h4 class="font-bold text-2xl mb-4 gradient-text-luxury border-b pb-3 border-blue-200">Pengalaman</h4>
+          <ul class="list-disc pl-6 space-y-3 text-gray-700 text-base">
             <li>Lead Programer di Agensi Kreatif XYZ selama 1 tahun</li>
             <li>Menciptakan prototype interaktif high-fidelity menggunakan Figma dan Adobe XD</li>
             <li>Berhasil memimpin proyek riset pengguna dan pengujian usability untuk berbagai produk</li>
@@ -184,196 +496,216 @@
         </div>
       </div>
 
-      <h4 class="font-bold text-2xl mt-6 mb-4 text-gray-900 text-center">Sertifikat</h4>
+      <h4 class="font-bold text-3xl mt-8 mb-6 gradient-text-luxury text-center">Sertifikat</h4>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md border border-blue-100">
-          <img src="sertifikat1-inay.png" alt="Sertifikat Figma" class="rounded shadow mb-3" />
-          <p class="text-sm text-gray-700 text-center">Sertifikasi resmi dari Figma untuk penggunaan alat desain UI/UX profesional (2023).</p>
+        <div class="luxury-card p-6 rounded-xl transition-all duration-300">
+          <img src="sertifikat1-inay.png" alt="Sertifikat Figma" class="rounded-lg shadow-lg mb-4 w-full" />
+          <p class="text-sm text-gray-700 text-center leading-relaxed">Sertifikasi resmi dari Figma untuk penggunaan alat desain UI/UX profesional (2023).</p>
         </div>
-        <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md border border-blue-100">
-          <img src="sertifikat2-inay.png" alt="Sertifikat UX Research" class="rounded shadow mb-3" />
-          <p class="text-sm text-gray-700 text-center">Sertifikasi dalam metodologi riset pengguna dan analisis data (2024).</p>
+        <div class="luxury-card p-6 rounded-xl transition-all duration-300">
+          <img src="sertifikat2-inay.png" alt="Sertifikat UX Research" class="rounded-lg shadow-lg mb-4 w-full" />
+          <p class="text-sm text-gray-700 text-center leading-relaxed">Sertifikasi dalam metodologi riset pengguna dan analisis data (2024).</p>
         </div>
-        <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md border border-blue-100">
-          <img src="sertifikat3-inay.png" alt="Sertifikat Adobe XD" class="rounded shadow mb-3" />
-          <p class="text-sm text-gray-700 text-center">Sertifikasi keahlian dalam Adobe XD untuk wireframing dan prototyping (2023).</p>
+        <div class="luxury-card p-6 rounded-xl transition-all duration-300">
+          <img src="sertifikat3-inay.png" alt="Sertifikat Adobe XD" class="rounded-lg shadow-lg mb-4 w-full" />
+          <p class="text-sm text-gray-700 text-center leading-relaxed">Sertifikasi keahlian dalam Adobe XD untuk wireframing dan prototyping (2023).</p>
         </div>
-        <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md border border-blue-100">
-          <img src="sertifikat4-inay.png" alt="Sertifikat Adobe XD" class="rounded shadow mb-3" />
-          <p class="text-sm text-gray-700 text-center">Sertifikasi keahlian dalam Adobe XD untuk wireframing dan prototyping (2023).</p>
+        <div class="luxury-card p-6 rounded-xl transition-all duration-300">
+          <img src="sertifikat4-inay.png" alt="Sertifikat Adobe XD" class="rounded-lg shadow-lg mb-4 w-full" />
+          <p class="text-sm text-gray-700 text-center leading-relaxed">Sertifikasi keahlian dalam Adobe XD untuk wireframing dan prototyping (2023).</p>
         </div>
-        <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md border border-blue-100">
-          <img src="sertifikat5-inay.png" alt="Sertifikat Adobe XD" class="rounded shadow mb-3" />
-          <p class="text-sm text-gray-700 text-center">Sertifikasi keahlian dalam Adobe XD untuk wireframing dan prototyping (2023).</p>
+        <div class="luxury-card p-6 rounded-xl transition-all duration-300">
+          <img src="sertifikat5-inay.png" alt="Sertifikat Adobe XD" class="rounded-lg shadow-lg mb-4 w-full" />
+          <p class="text-sm text-gray-700 text-center leading-relaxed">Sertifikasi keahlian dalam Adobe XD untuk wireframing dan prototyping (2023).</p>
         </div>
-        <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md border border-blue-100">
-          <img src="sertifikat6-inay.png" alt="Sertifikat Adobe XD" class="rounded shadow mb-3" />
-          <p class="text-sm text-gray-700 text-center">Sertifikasi keahlian dalam Adobe XD untuk wireframing dan prototyping (2023).</p>
+        <div class="luxury-card p-6 rounded-xl transition-all duration-300">
+          <img src="sertifikat6-inay.png" alt="Sertifikat Adobe XD" class="rounded-lg shadow-lg mb-4 w-full" />
+          <p class="text-sm text-gray-700 text-center leading-relaxed">Sertifikasi keahlian dalam Adobe XD untuk wireframing dan prototyping (2023).</p>
         </div>
-        <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md border border-blue-100">
-          <img src="sertifikat7-inay.png" alt="Sertifikat Adobe XD" class="rounded shadow mb-3" />
-          <p class="text-sm text-gray-700 text-center">Sertifikasi keahlian dalam Adobe XD untuk wireframing dan prototyping (2023).</p>
+        <div class="luxury-card p-6 rounded-xl transition-all duration-300">
+          <img src="sertifikat7-inay.png" alt="Sertifikat Adobe XD" class="rounded-lg shadow-lg mb-4 w-full" />
+          <p class="text-sm text-gray-700 text-center leading-relaxed">Sertifikasi keahlian dalam Adobe XD untuk wireframing dan prototyping (2023).</p>
         </div>
-        <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md border border-blue-100">
-          <img src="sertifikat8-inay.png" alt="Sertifikat Adobe XD" class="rounded shadow mb-3" />
-          <p class="text-sm text-gray-700 text-center">Sertifikasi keahlian dalam Adobe XD untuk wireframing dan prototyping (2023).</p>
+        <div class="luxury-card p-6 rounded-xl transition-all duration-300">
+          <img src="sertifikat8-inay.png" alt="Sertifikat Adobe XD" class="rounded-lg shadow-lg mb-4 w-full" />
+          <p class="text-sm text-gray-700 text-center leading-relaxed">Sertifikasi keahlian dalam Adobe XD untuk wireframing dan prototyping (2023).</p>
         </div>
-        <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md border border-blue-100">
-          <img src="sertifikat9-inay.png" alt="Sertifikat Adobe XD" class="rounded shadow mb-3" />
-          <p class="text-sm text-gray-700 text-center">Sertifikasi keahlian dalam Adobe XD untuk wireframing dan prototyping (2023).</p>
+        <div class="luxury-card p-6 rounded-xl transition-all duration-300">
+          <img src="sertifikat9-inay.png" alt="Sertifikat Adobe XD" class="rounded-lg shadow-lg mb-4 w-full" />
+          <p class="text-sm text-gray-700 text-center leading-relaxed">Sertifikasi keahlian dalam Adobe XD untuk wireframing dan prototyping (2023).</p>
         </div>
-        <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md border border-blue-100">
-          <img src="sertifikat10-inay.png" alt="Sertifikat Adobe XD" class="rounded shadow mb-3" />
-          <p class="text-sm text-gray-700 text-center">Sertifikasi keahlian dalam Adobe XD untuk wireframing dan prototyping (2023).</p>
+        <div class="luxury-card p-6 rounded-xl transition-all duration-300">
+          <img src="sertifikat10-inay.png" alt="Sertifikat Adobe XD" class="rounded-lg shadow-lg mb-4 w-full" />
+          <p class="text-sm text-gray-700 text-center leading-relaxed">Sertifikasi keahlian dalam Adobe XD untuk wireframing dan prototyping (2023).</p>
         </div>
-        <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md border border-blue-100">
-          <img src="sertifikat11-inay.png" alt="Sertifikat Adobe XD" class="rounded shadow mb-3" />
-          <p class="text-sm text-gray-700 text-center">Sertifikasi keahlian dalam Adobe XD untuk wireframing dan prototyping (2023).</p>
+        <div class="luxury-card p-6 rounded-xl transition-all duration-300">
+          <img src="sertifikat11-inay.png" alt="Sertifikat Adobe XD" class="rounded-lg shadow-lg mb-4 w-full" />
+          <p class="text-sm text-gray-700 text-center leading-relaxed">Sertifikasi keahlian dalam Adobe XD untuk wireframing dan prototyping (2023).</p>
         </div>
       </div>
     </div>
   </div>
 
-  <section id="portfolio" class="py-24 bg-blue-50">
+  <!-- Portfolio Section - Gabungan dengan Galeri -->
+  <section id="portfolio" class="py-28 section-luxury-1 ornate-pattern">
     <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-16 text-gray-900">Portofolio Kami</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 border border-blue-100">
-          <img src="project-mobile-posyandu.png" alt="Project 1" class="w-full h-52 object-cover"/>
-          <div class="p-6">
-            <h4 class="font-bold text-xl mb-2 text-gray-900">Aplikasi Manajemen Posyandu</h4>
-            <p class="text-sm text-gray-600 mb-4">Java | Kotlin|</p>
-            <p class="text-gray-700 text-sm">Aplikasi mobile dinamis untuk efisiensi manajemen tugas pribadi dan tim, menampilkan antarmuka yang responsif dan integrasi data real-time.</p>
-          </div>
-        </div>
-        <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 border border-blue-100">
-          <img src="project-gobis.png" alt="Project 2" class="w-full h-52 object-cover"/>
-          <div class="p-6">
-            <h4 class="font-bold text-xl mb-2 text-gray-900">Website Gobis</h4>
-            <p class="text-sm text-gray-600 mb-4">VisCode | PHP | JavaScript | MySQL</p>
-            <p class="text-gray-700 text-sm">Desain komprehensif untuk Travel bus Pariwisata berfokus pada pengalaman pemesanan tiket bus yang intuitif dan visual yang menarik untuk meningkatkan konversi.</p>
-          </div>
-        </div>
-        <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 border border-blue-100">
-          <img src="project-jahit.png" alt="Project 3" class="w-full h-52 object-cover"/>
-          <div class="p-6">
-            <h4 class="font-bold text-xl mb-2 text-gray-900">Website Dashboard SCM/CRM pemesanan Jahit Online </h4>
-            <p class="text-sm text-gray-600 mb-4">HTML | CSS | JavaScript | PHP</p>
-            <p class="text-gray-700 text-sm">Website yang membantu pengguna dengan mudah memesan jahit online dengan desain mewah dan fungsionalitas yang kuat.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="other-projects" class="py-24 bg-white">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-16 text-gray-900">Galeri Proyek Kami</h2>
-      <p class="text-lg text-gray-700 mb-12 max-w-2xl mx-auto leading-relaxed">
-        Jelajahi lebih banyak karya kami yang telah membantu klien mewujudkan visi digital mereka. Setiap proyek adalah bukti dedikasi kami pada desain dan pengembangan berkualitas tinggi.
+      <h2 class="text-5xl font-bold text-center mb-20 gradient-text-luxury">Portofolio & Galeri Kami</h2>
+      <p class="text-xl text-gray-700 mb-16 max-w-3xl mx-auto text-center leading-relaxed">
+        Jelajahi koleksi lengkap karya kami yang telah membantu klien mewujudkan visi digital mereka. Setiap proyek adalah bukti dedikasi kami pada desain dan pengembangan berkualitas tinggi.
       </p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 border border-blue-100">
-          <img src="project-absensi-guru.png" alt="Project 4" class="w-full h-52 object-cover"/>
-          <div class="p-6">
-            <h4 class="font-bold text-xl mb-2 text-gray-900">Website Absensi Guru</h4>
-            <p class="text-sm text-gray-600 mb-4">MySQL | UI/UX | PHP | HTML | CSS | JavaScript</p>
-            <p class="text-700 text-sm">Pengembangan Website Mobile/PC lintas platform dengan desain modern dan fungsionalitas penuh untuk pengalaman pengguna yang lancar.</p>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <!-- Project 1 -->
+        <div class="luxury-card rounded-2xl overflow-hidden transition-all duration-500 transform hover:scale-105 animate-float">
+          <img src="project-mobile-posyandu.png" alt="Project 1" class="w-full h-56 object-cover"/>
+          <div class="p-8">
+            <h4 class="font-bold text-2xl mb-3 text-gray-900">Aplikasi Manajemen Posyandu</h4>
+            <p class="text-sm gradient-text-luxury font-semibold mb-4">Java | Kotlin</p>
+            <p class="text-gray-700 text-sm leading-relaxed">Aplikasi mobile dinamis untuk efisiensi manajemen tugas pribadi dan tim, menampilkan antarmuka yang responsif dan integrasi data real-time.</p>
           </div>
         </div>
 
-        <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 border border-blue-100">
-          <img src="project-frozenfood.png" alt="Project 5" class="w-full h-52 object-cover"/>
-          <div class="p-6">
-            <h4 class="font-bold text-xl mb-2 text-gray-900">Dashboard SCM/CRM frozen Food</h4>
-            <p class="text-sm text-gray-600 mb-4">PHP | MySQL | CSS</p>
-            <p class="text-gray-700 text-sm">Membangun dashboard interaktif untuk visualisasi data kompleks, membantu pengambilan keputusan berdasarkan insight yang jelas.</p>
+        <!-- Project 2 -->
+        <div class="luxury-card rounded-2xl overflow-hidden transition-all duration-500 transform hover:scale-105 animate-float" style="animation-delay: 0.2s;">
+          <img src="project-gobis.png" alt="Project 2" class="w-full h-56 object-cover"/>
+          <div class="p-8">
+            <h4 class="font-bold text-2xl mb-3 text-gray-900">Website Gobis</h4>
+            <p class="text-sm gradient-text-luxury font-semibold mb-4">VisCode | PHP | JavaScript | MySQL</p>
+            <p class="text-gray-700 text-sm leading-relaxed">Desain komprehensif untuk Travel bus Pariwisata berfokus pada pengalaman pemesanan tiket bus yang intuitif dan visual yang menarik untuk meningkatkan konversi.</p>
           </div>
         </div>
 
-        <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 border border-blue-100">
-          <img src="project-bengkel-las.png " alt="Project 6" class="w-full h-52 object-cover"/>
-          <div class="p-6">
-            <h4 class="font-bold text-xl mb-2 text-gray-900">Website Dashboard ERP Bengkel Las </h4>
-            <p class="text-sm text-gray-600 mb-4">PHP | MySQL | JavaScript | CSS | </p>
-            <p class="text-gray-700 text-sm">Pengembangan platform e-learning lengkap dengan fitur kursus, kuis, dan streaming video untuk pengalaman belajar yang optimal.</p>
+        <!-- Project 3 -->
+        <div class="luxury-card rounded-2xl overflow-hidden transition-all duration-500 transform hover:scale-105 animate-float" style="animation-delay: 0.4s;">
+          <img src="project-jahit.png" alt="Project 3" class="w-full h-56 object-cover"/>
+          <div class="p-8">
+            <h4 class="font-bold text-2xl mb-3 text-gray-900">Website Dashboard SCM/CRM pemesanan Jahit Online</h4>
+            <p class="text-sm gradient-text-luxury font-semibold mb-4">HTML | CSS | JavaScript | PHP</p>
+            <p class="text-gray-700 text-sm leading-relaxed">Website yang membantu pengguna dengan mudah memesan jahit online dengan desain mewah dan fungsionalitas yang kuat.</p>
           </div>
         </div>
 
-        <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 border border-blue-100">
-          <img src="project-wedding.png" alt="Project 7" class="w-full h-52 object-cover"/>
-          <div class="p-6">
-            <h4 class="font-bold text-xl mb-2 text-gray-900">Website Wedding Organizer</h4>
-            <p class="text-sm text-gray-600 mb-4">HTML | CSS | Github</p>
-            <p class="text-gray-700 text-sm">Pembuatan undangan pernikahan dengan desain fungsionalitas blog untuk meningkatkan keterbacaan, dan pengalaman pengunjung.</p>
+        <!-- Project 4 -->
+        <div class="luxury-card rounded-2xl overflow-hidden transition-all duration-500 transform hover:scale-105 animate-float" style="animation-delay: 0.6s;">
+          <img src="project-absensi-guru.png" alt="Project 4" class="w-full h-56 object-cover"/>
+          <div class="p-8">
+            <h4 class="font-bold text-2xl mb-3 text-gray-900">Website Absensi Guru</h4>
+            <p class="text-sm gradient-text-luxury font-semibold mb-4">MySQL | UI/UX | PHP | HTML | CSS | JavaScript</p>
+            <p class="text-gray-700 text-sm leading-relaxed">Pengembangan Website Mobile/PC lintas platform dengan desain modern dan fungsionalitas penuh untuk pengalaman pengguna yang lancar.</p>
           </div>
         </div>
 
-        <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 border border-blue-100">
-          <img src="https://placehold.co/600x400?text=Portfolio+Site" alt="Project 8" class="w-full h-52 object-cover"/>
-          <div class="p-6">
-            <h4 class="font-bold text-xl mb-2 text-gray-900">Website Portofolio Fotografer Profesional</h4>
-            <p class="text-sm text-gray-600 mb-4">Next.js | CSS Modules | Sanity CMS</p>
-            <p class="text-gray-700 text-sm">Website portofolio yang elegan dan cepat untuk menampilkan karya seni visual dengan sistem manajemen konten yang mudah digunakan.</p>
+        <!-- Project 5 -->
+        <div class="luxury-card rounded-2xl overflow-hidden transition-all duration-500 transform hover:scale-105 animate-float" style="animation-delay: 0.8s;">
+          <img src="project-frozenfood.png" alt="Project 5" class="w-full h-56 object-cover"/>
+          <div class="p-8">
+            <h4 class="font-bold text-2xl mb-3 text-gray-900">Dashboard SCM/CRM frozen Food</h4>
+            <p class="text-sm gradient-text-luxury font-semibold mb-4">PHP | MySQL | CSS</p>
+            <p class="text-gray-700 text-sm leading-relaxed">Membangun dashboard interaktif untuk visualisasi data kompleks, membantu pengambilan keputusan berdasarkan insight yang jelas.</p>
           </div>
         </div>
 
-        <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 border border-blue-100">
-          <img src="https://placehold.co/600x400?text=Booking+System" alt="Project 9" class="w-full h-52 object-cover"/>
-          <div class="p-6">
-            <h4 class="font-bold text-xl mb-2 text-gray-900">Sistem Pemesanan Online Terintegrasi</h4>
-            <p class="text-sm text-gray-600 mb-4">Python/Django | PostgreSQL | Stripe API</p>
-            <p class="text-gray-700 text-sm">Sistem pemesanan yang canggih dengan manajemen jadwal, pembayaran online, dan notifikasi otomatis untuk berbagai layanan.</p>
+        <!-- Project 6 -->
+        <div class="luxury-card rounded-2xl overflow-hidden transition-all duration-500 transform hover:scale-105 animate-float" style="animation-delay: 1s;">
+          <img src="project-bengkel-las.png" alt="Project 6" class="w-full h-56 object-cover"/>
+          <div class="p-8">
+            <h4 class="font-bold text-2xl mb-3 text-gray-900">Website Dashboard ERP Bengkel Las</h4>
+            <p class="text-sm gradient-text-luxury font-semibold mb-4">PHP | MySQL | JavaScript | CSS</p>
+            <p class="text-gray-700 text-sm leading-relaxed">Pengembangan platform e-learning lengkap dengan fitur kursus, kuis, dan streaming video untuk pengalaman belajar yang optimal.</p>
+          </div>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="luxury-card rounded-2xl overflow-hidden transition-all duration-500 transform hover:scale-105 animate-float" style="animation-delay: 1.2s;">
+          <img src="project-wedding.png" alt="Project 7" class="w-full h-56 object-cover"/>
+          <div class="p-8">
+            <h4 class="font-bold text-2xl mb-3 text-gray-900">Website Wedding Organizer</h4>
+            <p class="text-sm gradient-text-luxury font-semibold mb-4">HTML | CSS | Github</p>
+            <p class="text-gray-700 text-sm leading-relaxed">Pembuatan undangan pernikahan dengan desain fungsionalitas blog untuk meningkatkan keterbacaan, dan pengalaman pengunjung.</p>
+          </div>
+        </div>
+
+        <!-- Project 8 -->
+        <div class="luxury-card rounded-2xl overflow-hidden transition-all duration-500 transform hover:scale-105 animate-float" style="animation-delay: 1.4s;">
+          <img src="https://placehold.co/600x400/3b82f6/ffffff?text=Portfolio+Site" alt="Project 8" class="w-full h-56 object-cover"/>
+          <div class="p-8">
+            <h4 class="font-bold text-2xl mb-3 text-gray-900">Website Portofolio Fotografer Profesional</h4>
+            <p class="text-sm gradient-text-luxury font-semibold mb-4">Next.js | CSS Modules | Sanity CMS</p>
+            <p class="text-gray-700 text-sm leading-relaxed">Website portofolio yang elegan dan cepat untuk menampilkan karya seni visual dengan sistem manajemen konten yang mudah digunakan.</p>
+          </div>
+        </div>
+
+        <!-- Project 9 -->
+        <div class="luxury-card rounded-2xl overflow-hidden transition-all duration-500 transform hover:scale-105 animate-float" style="animation-delay: 1.6s;">
+          <img src="https://placehold.co/600x400/ec4899/ffffff?text=Booking+System" alt="Project 9" class="w-full h-56 object-cover"/>
+          <div class="p-8">
+            <h4 class="font-bold text-2xl mb-3 text-gray-900">Sistem Pemesanan Online Terintegrasi</h4>
+            <p class="text-sm gradient-text-luxury font-semibold mb-4">Python/Django | PostgreSQL | Stripe API</p>
+            <p class="text-gray-700 text-sm leading-relaxed">Sistem pemesanan yang canggih dengan manajemen jadwal, pembayaran online, dan notifikasi otomatis untuk berbagai layanan.</p>
           </div>
         </div>
       </div>
-      <div class="mt-16 text-center">
-        <p class="text-lg text-gray-700 mb-6">Tertarik untuk memulai proyek Anda sendiri?</p>
-        <a href="mailto:halo.timkreatif@example.com"
-           class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition transform hover:scale-105 shadow-lg">
-          Hubungi Kami untuk Kolaborasi
-        </a>
+
+      <!-- Call to Action -->
+      <div class="mt-20 text-center">
+        <div class="luxury-card p-12 rounded-2xl">
+          <h3 class="text-3xl font-bold gradient-text-luxury mb-6">Tertarik untuk memulai proyek Anda sendiri?</h3>
+          <p class="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">Mari berkolaborasi untuk mewujudkan ide digital Anda menjadi kenyataan dengan sentuhan profesional dan inovatif.</p>
+          <a href="mailto:halo.timkreatif@example.com" class="btn-luxury text-white px-10 py-5 rounded-full text-lg font-semibold transition-all duration-300 inline-block">
+            <i class="fas fa-envelope mr-3"></i>Hubungi Kami untuk Kolaborasi
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer class="bg-gray-800 text-white py-12">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <div class="mb-8">
-        <h3 class="text-3xl font-bold gradient-text mb-2">Portfolio</h3>
-        <p class="text-gray-300 text-sm">Wujudkan ide digital Anda bersama kami.</p>
+  <!-- Footer -->
+  <footer class="gradient-bg-primary py-16 relative overflow-hidden ornate-bg">
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+      <div class="mb-10">
+        <h3 class="text-4xl font-bold text-white mb-4 animate-float">Portfolio</h3>
+        <p class="text-pink-100 text-lg">Wujudkan ide digital Anda bersama kami.</p>
       </div>
 
-      <div class="flex justify-center space-x-8 mb-8">
-        <a href="https://instagram.com/your_instagram" target="_blank" aria-label="Instagram" class="text-gray-300 hover:text-pink-500 transition transform hover:-translate-y-1">
+      <div class="flex justify-center space-x-12 mb-12">
+        <a href="https://instagram.com/your_instagram" target="_blank" aria-label="Instagram" class="text-white/80 hover:text-pink-400 transition-all duration-300 transform hover:scale-110 hover:-translate-y-2">
           <i class="fab fa-instagram fa-3x"></i>
         </a>
-        <a href="https://wa.me/your_whatsapp_number" target="_blank" aria-label="WhatsApp" class="text-gray-300 hover:text-green-500 transition transform hover:-translate-y-1">
+        <a href="https://wa.me/your_whatsapp_number" target="_blank" aria-label="WhatsApp" class="text-white/80 hover:text-green-400 transition-all duration-300 transform hover:scale-110 hover:-translate-y-2">
           <i class="fab fa-whatsapp fa-3x"></i>
         </a>
-        <a href="mailto:your_email@example.com" aria-label="Gmail" class="text-gray-300 hover:text-red-500 transition transform hover:-translate-y-1">
+        <a href="mailto:your_email@example.com" aria-label="Gmail" class="text-white/80 hover:text-red-400 transition-all duration-300 transform hover:scale-110 hover:-translate-y-2">
           <i class="far fa-envelope fa-3x"></i>
         </a>
       </div>
 
-      <p class="text-gray-400 text-sm">&copy; 2025 Portfolio Tim Kreatif. Hak Cipta Dilindungi.</p>
+      <div class="border-t border-white/20 pt-8">
+        <p class="text-pink-100 text-sm">&copy; 2025 Portfolio Tim Kreatif. Hak Cipta Dilindungi.</p>
+      </div>
     </div>
   </footer>
 
   <script>
     function openModal(id) {
-      document.getElementById(`modal-${id}`).classList.remove('hidden');
-      document.getElementById(`modal-${id}`).classList.add('flex'); // Use flex for centering
+      const modal = document.getElementById(`modal-${id}`);
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
     }
 
     function closeModal(id) {
-      document.getElementById(`modal-${id}`).classList.add('hidden');
-      document.getElementById(`modal-${id}`).classList.remove('flex');
+      const modal = document.getElementById(`modal-${id}`);
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      // Restore body scroll when modal is closed
+      document.body.style.overflow = 'auto';
     }
 
     // Close modal when clicking outside of it
     window.onclick = function(event) {
-      const modals = ['arief', 'inayah']; // Corrected to match modal IDs
+      const modals = ['arief', 'inayah'];
       modals.forEach(id => {
         const modal = document.getElementById(`modal-${id}`);
         if (event.target === modal) {
@@ -381,6 +713,92 @@
         }
       });
     }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        const modals = ['arief', 'inayah'];
+        modals.forEach(id => {
+          const modal = document.getElementById(`modal-${id}`);
+          if (!modal.classList.contains('hidden')) {
+            closeModal(id);
+          }
+        });
+      }
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add scroll effect to header
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 100) {
+        header.style.background = 'linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(252, 231, 243, 0.98) 50%, rgba(248, 250, 252, 0.98) 100%)';
+        header.style.boxShadow = '0 8px 32px rgba(236, 72, 153, 0.1)';
+      } else {
+        header.style.background = 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(252, 231, 243, 0.95) 50%, rgba(248, 250, 252, 0.95) 100%)';
+        header.style.boxShadow = '0 4px 6px -1px rgba(236, 72, 153, 0.05)';
+      }
+    });
+
+    // Add intersection observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all cards for animation
+    document.querySelectorAll('.luxury-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
+    });
+
+    // Add parallax effect to ornate backgrounds
+    window.addEventListener('scroll', function() {
+      const scrolled = window.pageYOffset;
+      const ornateElements = document.querySelectorAll('.ornate-bg, .ornate-pattern');
+      
+      ornateElements.forEach(element => {
+        const speed = 0.5;
+        element.style.transform = `translateY(${scrolled * speed}px)`;
+      });
+    });
+
+    // Add hover effect to mission items
+    document.querySelectorAll('.mission-item').forEach(item => {
+      item.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateX(10px)';
+        this.style.boxShadow = '0 10px 25px rgba(236, 72, 153, 0.15)';
+      });
+      
+      item.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateX(0)';
+        this.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+      });
+    });
   </script>
 
 </body>
