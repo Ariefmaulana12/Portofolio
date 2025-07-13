@@ -12,24 +12,24 @@
       font-family: 'Inter', sans-serif;
     }
     
-    /* Luxury gradient backgrounds with blue, pink, white */
+    /* Luxury gradient backgrounds with pink, teal, cream */
     .gradient-bg-primary {
-      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 25%, #ec4899 50%, #f472b6 75%, #fce7f3 100%);
+      background: linear-gradient(135deg, #be185d 0%, #ec4899 25%, #0d9488 50%, #14b8a6 75%, #fef3c7 100%);
     }
     
     .gradient-bg-secondary {
-      background: linear-gradient(135deg, #fce7f3 0%, #f8fafc 25%, #e0e7ff 50%, #ddd6fe 75%, #f3e8ff 100%);
+      background: linear-gradient(135deg, #fef3c7 0%, #fef7cd 25%, #ccfbf1 50%, #a7f3d0 75%, #fde68a 100%);
     }
     
     .gradient-text-luxury {
-      background: linear-gradient(135deg, #1e40af, #3b82f6, #ec4899);
+      background: linear-gradient(135deg, #be185d, #ec4899, #0d9488);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
     
-    .gradient-text-pink {
-      background: linear-gradient(135deg, #ec4899, #f472b6, #fbbf24);
+    .gradient-text-accent {
+      background: linear-gradient(135deg, #0d9488, #14b8a6, #fbbf24);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -38,28 +38,28 @@
     /* Ornate background patterns */
     .ornate-bg {
       background-image: 
-        radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 25% 25%, rgba(13, 148, 136, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 75% 75%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
-        linear-gradient(45deg, transparent 45%, rgba(255, 255, 255, 0.05) 50%, transparent 55%),
-        linear-gradient(-45deg, transparent 45%, rgba(255, 255, 255, 0.05) 50%, transparent 55%);
+        linear-gradient(45deg, transparent 45%, rgba(254, 243, 199, 0.3) 50%, transparent 55%),
+        linear-gradient(-45deg, transparent 45%, rgba(254, 243, 199, 0.3) 50%, transparent 55%);
       background-size: 60px 60px, 80px 80px, 40px 40px, 40px 40px;
       background-position: 0 0, 30px 30px, 0 0, 20px 20px;
     }
     
     .ornate-pattern {
       background-image: 
-        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(59, 130, 246, 0.05) 10px, rgba(59, 130, 246, 0.05) 20px),
+        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(13, 148, 136, 0.05) 10px, rgba(13, 148, 136, 0.05) 20px),
         repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(236, 72, 153, 0.05) 10px, rgba(236, 72, 153, 0.05) 20px);
     }
     
     /* Luxury card styles */
     .luxury-card {
-      background: linear-gradient(145deg, #ffffff 0%, #fef7ff 50%, #fce7f3 100%);
+      background: linear-gradient(145deg, #ffffff 0%, #fef3c7 30%, #fef7cd 70%, #ffffff 100%);
       border: 2px solid transparent;
       background-clip: padding-box;
       box-shadow: 
         0 20px 25px -5px rgba(236, 72, 153, 0.1),
-        0 10px 10px -5px rgba(59, 130, 246, 0.04),
+        0 10px 10px -5px rgba(13, 148, 136, 0.04),
         inset 0 1px 0 rgba(255, 255, 255, 0.8);
       position: relative;
     }
@@ -73,7 +73,7 @@
       bottom: 0;
       border-radius: inherit;
       padding: 2px;
-      background: linear-gradient(135deg, #3b82f6, #ec4899, #f472b6);
+      background: linear-gradient(135deg, #0d9488, #ec4899, #14b8a6);
       mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       mask-composite: exclude;
       z-index: -1;
@@ -83,21 +83,21 @@
       transform: translateY(-8px);
       box-shadow: 
         0 32px 64px -12px rgba(236, 72, 153, 0.25),
-        0 20px 25px -5px rgba(59, 130, 246, 0.1),
+        0 20px 25px -5px rgba(13, 148, 136, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.9);
     }
     
     /* Luxury button styles */
     .btn-luxury {
-      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 25%, #ec4899 75%, #f472b6 100%);
+      background: linear-gradient(135deg, #be185d 0%, #ec4899 25%, #0d9488 75%, #14b8a6 100%);
       box-shadow: 
         0 4px 15px 0 rgba(236, 72, 153, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
-      border: 1px solid rgba(30, 64, 175, 0.3);
+      border: 1px solid rgba(190, 24, 93, 0.3);
     }
     
     .btn-luxury:hover {
-      background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 25%, #be185d 75%, #ec4899 100%);
+      background: linear-gradient(135deg, #9f1239 0%, #be185d 25%, #0f766e 75%, #0d9488 100%);
       box-shadow: 
         0 8px 25px 0 rgba(236, 72, 153, 0.6),
         inset 0 1px 0 rgba(255, 255, 255, 0.3);
@@ -106,7 +106,7 @@
     
     /* Luxury header */
     .luxury-header {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(252, 231, 243, 0.95) 50%, rgba(248, 250, 252, 0.95) 100%);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 243, 199, 0.95) 50%, rgba(204, 251, 241, 0.95) 100%);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(236, 72, 153, 0.1);
       box-shadow: 0 4px 6px -1px rgba(236, 72, 153, 0.05);
@@ -114,7 +114,7 @@
     
     /* Luxury modal */
     .luxury-modal {
-      background: linear-gradient(145deg, #ffffff 0%, #fef7ff 50%, #f8fafc 100%);
+      background: linear-gradient(145deg, #ffffff 0%, #fef3c7 30%, #ccfbf1 70%, #ffffff 100%);
       border: 2px solid rgba(236, 72, 153, 0.1);
       box-shadow: 
         0 25px 50px -12px rgba(0, 0, 0, 0.25),
@@ -159,20 +159,14 @@
     
     /* Luxury section backgrounds */
     .section-luxury-1 {
-      background: linear-gradient(135deg, #fef7ff 0%, #f8fafc 25%, #e0e7ff 50%, #fce7f3 75%, #ffffff 100%);
+      background: linear-gradient(135deg, #fef3c7 0%, #ffffff 25%, #ccfbf1 50%, #fef7cd 75%, #ffffff 100%);
     }
     
     .section-luxury-2 {
-      background: linear-gradient(135deg, #ffffff 0%, #fce7f3 25%, #e0e7ff 50%, #f8fafc 75%, #fef7ff 100%);
+      background: linear-gradient(135deg, #ffffff 0%, #fef7cd 25%, #ccfbf1 50%, #fef3c7 75%, #ffffff 100%);
     }
     
-    /* Profile image luxury border */
-    .profile-luxury {
-      border: 4px solid transparent;
-      background: linear-gradient(135deg, #3b82f6, #ec4899, #f472b6) border-box;
-      mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-      mask-composite: exclude;
-    }
+
     
     .modal-content {
       max-width: 90%;
@@ -186,22 +180,22 @@
     }
     
     .modal-content::-webkit-scrollbar-track {
-      background: #f1f5f9;
+      background: #fef3c7;
       border-radius: 4px;
     }
     
     .modal-content::-webkit-scrollbar-thumb {
-      background: linear-gradient(135deg, #3b82f6, #ec4899);
+      background: linear-gradient(135deg, #0d9488, #ec4899);
       border-radius: 4px;
     }
     
     .modal-content::-webkit-scrollbar-thumb:hover {
-      background: linear-gradient(135deg, #1e40af, #be185d);
+      background: linear-gradient(135deg, #0f766e, #be185d);
     }
     
     /* Mission item styles */
     .mission-item {
-      background: linear-gradient(145deg, #ffffff 0%, #fef7ff 100%);
+      background: linear-gradient(145deg, #ffffff 0%, #fef3c7 100%);
       border-left: 4px solid transparent;
       background-clip: padding-box;
       position: relative;
@@ -214,7 +208,7 @@
       top: 0;
       bottom: 0;
       width: 4px;
-      background: linear-gradient(135deg, #3b82f6, #ec4899);
+      background: linear-gradient(135deg, #0d9488, #ec4899);
     }
   </style>
 </head>
@@ -224,17 +218,17 @@
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
       <h1 class="text-3xl font-bold gradient-text-luxury">Portfolio</h1>
       <nav class="space-x-8 hidden md:flex">
-        <a href="#about" class="text-gray-700 hover:text-pink-600 transition duration-300 ease-in-out font-medium relative group">
+        <a href="#about" class="text-gray-700 hover:text-teal-600 transition duration-300 ease-in-out font-medium relative group">
           Tentang
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
         </a>
-        <a href="#vision-mission" class="text-gray-700 hover:text-pink-600 transition duration-300 ease-in-out font-medium relative group">
+        <a href="#vision-mission" class="text-gray-700 hover:text-teal-600 transition duration-300 ease-in-out font-medium relative group">
           Visi & Misi
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
         </a>
-        <a href="#portfolio" class="text-gray-700 hover:text-pink-600 transition duration-300 ease-in-out font-medium relative group">
+        <a href="#portfolio" class="text-gray-700 hover:text-teal-600 transition duration-300 ease-in-out font-medium relative group">
           Portofolio
-          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
         </a>
       </nav>
     </div>
@@ -261,9 +255,9 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 
         <div class="luxury-card p-10 rounded-2xl transition-all duration-500 transform hover:scale-105">
-          <img src="foto-arief.jpg" alt="Profile Arief Maulana" class="w-40 h-40 rounded-full mx-auto object-cover mb-8 profile-luxury shadow-2xl"/>
+          <img src="./profil_arief.png" alt="Profile Arief Maulana" class="w-40 h-40 rounded-full mx-auto object-cover mb-8 shadow-2xl border-4 border-pink-500"/>
           <h3 class="text-3xl font-bold text-center mb-3 text-gray-900">Arief Maulana</h3>
-          <p class="gradient-text-luxury font-semibold text-center mb-6 text-lg">Programer/Desainer UI/UX</p>
+          <p class="gradient-text-luxury font-semibold text-center mb-6 text-lg">FrontEnd/Desainer UI/UX</p>
           <p class="text-gray-700 mb-8 text-center leading-relaxed">
             Fokus saya pada kinerja dan pengalaman pengguna menunjukkan bahwa saya tidak hanya peduli pada tampilan, tetapi juga pada bagaimana pengguna berinteraksi dengan produk digital dan seberapa efisiennya.
           </p>
@@ -275,9 +269,9 @@
         </div>
 
         <div class="luxury-card p-10 rounded-2xl transition-all duration-500 transform hover:scale-105">
-          <img src="foto-inay.jpg" alt="Profile Inayah Ainina Mawardi" class="w-40 h-40 rounded-full mx-auto object-cover mb-8 profile-luxury shadow-2xl"/>
+          <img src="./profil_inay.png" alt="Profile Inayah Ainina Mawardi" class="w-40 h-40 rounded-full mx-auto object-cover mb-8 shadow-2xl border-4 border-pink-500"/>
           <h3 class="text-3xl font-bold text-center mb-3 text-gray-900">Inayah Ainina Mawardi</h3>
-          <p class="gradient-text-luxury font-semibold text-center mb-6 text-lg">Programer</p>
+          <p class="gradient-text-luxury font-semibold text-center mb-6 text-lg">BackEnd/Programer</p>
           <p class="text-gray-700 mb-8 text-center leading-relaxed">
             saya adalah seorang programmer, seorang inovator yang tak kenal lelah dalam mencari cara baru untuk meningkatkan efisiensi dan fungsionalitas. Setiap bug adalah tantangan, dan setiap fitur baru adalah kanvas untuk kreativitas saya
           </p>
@@ -301,7 +295,7 @@
       <div class="mb-16">
         <div class="luxury-card p-12 rounded-2xl text-center">
           <div class="mb-8">
-            <i class="fas fa-eye text-6xl gradient-text-pink mb-6"></i>
+            <i class="fas fa-eye text-6xl gradient-text-accent mb-6"></i>
             <h3 class="text-4xl font-bold gradient-text-luxury mb-6">Visi</h3>
           </div>
           <p class="text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
@@ -313,7 +307,7 @@
       <!-- Misi -->
       <div>
         <div class="text-center mb-12">
-          <i class="fas fa-bullseye text-6xl gradient-text-pink mb-6"></i>
+          <i class="fas fa-bullseye text-6xl gradient-text-accent mb-6"></i>
           <h3 class="text-4xl font-bold gradient-text-luxury">Misi</h3>
         </div>
         
@@ -321,7 +315,7 @@
           <div class="mission-item p-8 rounded-xl shadow-lg">
             <div class="flex items-start space-x-4">
               <div class="flex-shrink-0">
-                <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">1</div>
+                <div class="w-8 h-8 bg-gradient-to-r from-teal-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">1</div>
               </div>
               <div>
                 <h4 class="font-bold text-xl mb-3 gradient-text-luxury">Menciptakan Solusi Inovatif</h4>
@@ -333,7 +327,7 @@
           <div class="mission-item p-8 rounded-xl shadow-lg">
             <div class="flex items-start space-x-4">
               <div class="flex-shrink-0">
-                <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">2</div>
+                <div class="w-8 h-8 bg-gradient-to-r from-teal-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">2</div>
               </div>
               <div>
                 <h4 class="font-bold text-xl mb-3 gradient-text-luxury">Fokus pada Kolaborasi Tim</h4>
@@ -345,7 +339,7 @@
           <div class="mission-item p-8 rounded-xl shadow-lg">
             <div class="flex items-start space-x-4">
               <div class="flex-shrink-0">
-                <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">3</div>
+                <div class="w-8 h-8 bg-gradient-to-r from-teal-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">3</div>
               </div>
               <div>
                 <h4 class="font-bold text-xl mb-3 gradient-text-luxury">Mengutamakan Pengalaman Pengguna</h4>
@@ -357,7 +351,7 @@
           <div class="mission-item p-8 rounded-xl shadow-lg">
             <div class="flex items-start space-x-4">
               <div class="flex-shrink-0">
-                <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">4</div>
+                <div class="w-8 h-8 bg-gradient-to-r from-teal-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">4</div>
               </div>
               <div>
                 <h4 class="font-bold text-xl mb-3 gradient-text-luxury">Mengadaptasi Teknologi Terbaru</h4>
@@ -369,7 +363,7 @@
           <div class="mission-item p-8 rounded-xl shadow-lg">
             <div class="flex items-start space-x-4">
               <div class="flex-shrink-0">
-                <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">5</div>
+                <div class="w-8 h-8 bg-gradient-to-r from-teal-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">5</div>
               </div>
               <div>
                 <h4 class="font-bold text-xl mb-3 gradient-text-luxury">Menerapkan Praktik Terbaik</h4>
@@ -381,7 +375,7 @@
           <div class="mission-item p-8 rounded-xl shadow-lg">
             <div class="flex items-start space-x-4">
               <div class="flex-shrink-0">
-                <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">6</div>
+                <div class="w-8 h-8 bg-gradient-to-r from-teal-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">6</div>
               </div>
               <div>
                 <h4 class="font-bold text-xl mb-3 gradient-text-luxury">Membangun Produk Berkelanjutan</h4>
@@ -393,7 +387,7 @@
           <div class="mission-item p-8 rounded-xl shadow-lg md:col-span-2">
             <div class="flex items-start space-x-4">
               <div class="flex-shrink-0">
-                <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">7</div>
+                <div class="w-8 h-8 bg-gradient-to-r from-teal-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">7</div>
               </div>
               <div>
                 <h4 class="font-bold text-xl mb-3 gradient-text-luxury">Menciptakan Dampak Positif</h4>
@@ -412,27 +406,29 @@
       <button onclick="closeModal('arief')" class="absolute top-6 right-6 text-gray-500 hover:text-gray-800 text-3xl font-bold transition-all duration-300 hover:rotate-90">&times;</button>
 
       <div class="text-center mb-8">
-        <img src="foto-arief.jpg" alt="Profile Arief" class="w-40 h-40 rounded-full mx-auto object-cover profile-luxury shadow-2xl mb-6"/>
+        <img src="./profil_arief.png" alt="Profile Arief" class="w-40 h-40 rounded-full mx-auto object-cover shadow-2xl mb-6 border-4 border-pink-500"/>
         <h3 class="text-4xl font-extrabold gradient-text-luxury leading-tight">Arief Maulana</h3>
-        <p class="text-pink-600 font-semibold text-xl mt-3">Frontend Developer</p>
+        <p class="text-teal-600 font-semibold text-xl mt-3"></p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-8">
-        <div class="bg-gradient-to-br from-pink-50 to-white p-8 rounded-xl shadow-inner border border-pink-100">
-          <h4 class="font-bold text-2xl mb-4 gradient-text-luxury border-b pb-3 border-pink-200">Tentang Diri</h4>
+        <div class="bg-gradient-to-br from-amber-50 to-white p-8 rounded-xl shadow-inner border border-amber-100">
+          <h4 class="font-bold text-2xl mb-4 gradient-text-luxury border-b pb-3 border-amber-200">Tentang Diri</h4>
           <ul class="space-y-3 text-gray-700 text-base">
             <li><strong>Jurusan:</strong> Sistem Informasi</li>
             <li><strong>Umur:</strong> 22 tahun</li>
+            <li><strong>Pendidikan:</strong> Universitas Bina Insani</li>
             <li><i class="far fa-envelope mr-3 text-pink-500"></i><a href="mailto:arief.maulana@example.com" class="text-pink-600 hover:underline">maulanaarip1234@gmail.com</a></li>
-            <li><i class="fab fa-linkedin mr-3 text-blue-500"></i><a href="https://www.linkedin.com/in/arief-maulana-b2a6a6353/" target="_blank" class="text-blue-600 hover:underline">LinkedIn Profile</a></li>
+            <li><i class="fab fa-linkedin mr-3 text-teal-500"></i><a href="https://www.linkedin.com/in/arief-maulana-b2a6a6353/" target="_blank" class="text-teal-600 hover:underline">https://www.linkedin.com/in/arief-maulana-b2a6a6353/</a></li>
             <li><p class="mt-4 leading-relaxed text-gray-600">saya adalah seorang developer dan desainer yang memiliki minat kuat pada teknologi serta desain antarmuka interaktif dan responsif.</p></li>
           </ul>
         </div>
 
-        <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-xl shadow-inner border border-blue-100">
-          <h4 class="font-bold text-2xl mb-4 gradient-text-luxury border-b pb-3 border-blue-200">Pengalaman</h4>
+        <div class="bg-gradient-to-br from-teal-50 to-white p-8 rounded-xl shadow-inner border border-teal-100">
+          <h4 class="font-bold text-2xl mb-4 gradient-text-luxury border-b pb-3 border-teal-200">Pengalaman</h4>
           <ul class="list-disc pl-6 space-y-3 text-gray-700 text-base">
-            <li>Magang sebagai Frontend Developer di PT. Mustam Karya Mandiri selama 2 bulan (2022)</li>
+            <li>Bahasa Pemograman/tools desain Yang Dikuasai: HTML, CSS, JavaScript, PHP, MySQL,Figma, canva.</li>
+            <li>Magang/PKL sebagai Frontend Developer di PT. Mustam Karya Mandiri selama 2 bulan (2022)</li>
             <li>Memimpin pengembangan beberapa aplikasi berbasis React dan Next.js</li>
             <li>Berpengalaman dalam UI testing, debugging, dan optimisasi performa web</li>
             <li>Kontributor aktif di beberapa proyek open-source terkait frontend</li>
@@ -459,6 +455,7 @@
           <p class="text-sm text-gray-700 text-center leading-relaxed">Sertifikasi kemahiran dalam penggunaan Tailwind CSS untuk desain responsif (2024).</p>
         </div>
       </div>
+    
     </div>
   </div>
 
@@ -468,30 +465,34 @@
       <button onclick="closeModal('inayah')" class="absolute top-6 right-6 text-gray-500 hover:text-gray-800 text-3xl font-bold transition-all duration-300 hover:rotate-90">&times;</button>
 
       <div class="text-center mb-8">
-        <img src="foto-inay.jpg" alt="Profile Inayah" class="w-40 h-40 rounded-full mx-auto object-cover profile-luxury shadow-2xl mb-6"/>
+        <img src="./profil_inay.png" alt="Profile Inayah" class="w-40 h-40 rounded-full mx-auto object-cover shadow-2xl mb-6 border-4 border-pink-500"/>
         <h3 class="text-4xl font-extrabold gradient-text-luxury leading-tight">Inayah Ainina Mawardi</h3>
-        <p class="text-pink-600 font-semibold text-xl mt-3">Programer</p>
+        <p class="text-teal-600 font-semibold text-xl mt-3">Programer</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-8">
-        <div class="bg-gradient-to-br from-pink-50 to-white p-8 rounded-xl shadow-inner border border-pink-100">
-          <h4 class="font-bold text-2xl mb-4 gradient-text-luxury border-b pb-3 border-pink-200">Tentang Diri</h4>
+        <div class="bg-gradient-to-br from-amber-50 to-white p-8 rounded-xl shadow-inner border border-amber-100">
+          <h4 class="font-bold text-2xl mb-4 gradient-text-luxury border-b pb-3 border-amber-200">Tentang Diri</h4>
           <ul class="space-y-3 text-gray-700 text-base">
             <li><strong>Jurusan:</strong> Sistem Informasi</li>
             <li><strong>Umur:</strong> 21 tahun</li>
+            <li><strong>Pendidikan:</strong> Universitas Bina Insani</li>
             <li><i class="far fa-envelope mr-3 text-pink-500"></i><a href="mailto:inayah.ainina@example.com" class="text-pink-600 hover:underline">inayahmawardi3@gmail.com</a></li>
-            <li><i class="fab fa-linkedin mr-3 text-blue-500"></i><a href="https://linkedin.com/in/inayahainina" target="_blank" class="text-blue-600 hover:underline">LinkedIn Profile</a></li>
+            <li><i class="fab fa-linkedin mr-3 text-teal-500"></i><a href="https://linkedin.com/in/inayahainina" target="_blank" class="text-teal-600 hover:underline">https://linkedin.com/in/inayah-ainina-mawardi</a></li>
             <li><p class="mt-4 leading-relaxed text-gray-600">saya adalah seorang programmer, seorang inovator yang tak kenal lelah dalam mencari cara baru untuk meningkatkan efisiensi dan fungsionalitas.</p></li>
           </ul>
         </div>
+
         <div class="bg-gradient-to-br from-teal-50 to-white p-8 rounded-xl shadow-inner border border-teal-100">
           <h4 class="font-bold text-2xl mb-4 gradient-text-luxury border-b pb-3 border-teal-200">Pengalaman</h4>
           <ul class="list-disc pl-6 space-y-3 text-gray-700 text-base">
-            <li>Bahasa Pemrograman: JavaScript (React, Node.js), TypeScript, PHP, Python</li>
+            <li>Bahasa Pemrograman: JavaScript (React, Node.js), TypeScript, PHP, Python, HTML, Dart, Laravel, MaySQL</li>
             <li>Sebagai seorang pengembang perangkat lunak, saya memiliki pengalaman yang luas dalam merancang, mengembangkan, dan mengimplementasikan berbagai aplikasi serta solusi teknologi yang memenuhi kebutuhan pengguna dan bisnis. Dengan keahlian dalam pemrograman web, aplikasi mobile, dan pengembangan backend, saya selalu berfokus pada kualitas kode, fungsionalitas, dan pengalaman pengguna.</li>
+          
           </ul>
         </div>
       </div>
+
       <h4 class="font-bold text-3xl mt-8 mb-6 gradient-text-luxury text-center">Sertifikat</h4>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="luxury-card p-6 rounded-xl transition-all duration-300">
@@ -616,27 +617,27 @@
           <img src="project-wedding.png" alt="Project 7" class="w-full h-56 object-cover"/>
           <div class="p-8">
             <h4 class="font-bold text-2xl mb-3 text-gray-900">Website Wedding Organizer</h4>
-            <p class="text-sm gradient-text-luxury font-semibold mb-4">HTML | CSS | Github</p>
+            <p class="text-sm gradient-text-luxury font-semibold mb-4">HTML | CSS | MySQL | PHP |</p>
             <p class="text-gray-700 text-sm leading-relaxed">Pembuatan undangan pernikahan dengan desain fungsionalitas blog untuk meningkatkan keterbacaan, dan pengalaman pengunjung.</p>
           </div>
         </div>
 
         <!-- Project 8 -->
         <div class="luxury-card rounded-2xl overflow-hidden transition-all duration-500 transform hover:scale-105 animate-float" style="animation-delay: 1.4s;">
-          <img src="https://placehold.co/600x400/3b82f6/ffffff?text=Portfolio+Site" alt="Project 8" class="w-full h-56 object-cover"/>
+          <img src="website_penjualan_rumah.jpg" alt="Project 8" class="w-full h-56 object-cover"/>
           <div class="p-8">
-            <h4 class="font-bold text-2xl mb-3 text-gray-900">Website Portofolio Fotografer Profesional</h4>
-            <p class="text-sm gradient-text-luxury font-semibold mb-4">Next.js | CSS Modules | Sanity CMS</p>
-            <p class="text-gray-700 text-sm leading-relaxed">Website portofolio yang elegan dan cepat untuk menampilkan karya seni visual dengan sistem manajemen konten yang mudah digunakan.</p>
+            <h4 class="font-bold text-2xl mb-3 text-gray-900">Website Portofolio Penjualan Rumah</h4>
+            <p class="text-sm gradient-text-luxury font-semibold mb-4">PHP | CSS Modules | JavaScript | HTML | MySQL | /p>
+            <p class="text-gray-700 text-sm leading-relaxed">Website penjualan rumah yang elegan dan cepat untuk menampilkan karya seni visual dengan sistem manajemen konten yang mudah digunakan.</p>
           </div>
         </div>
 
         <!-- Project 9 -->
         <div class="luxury-card rounded-2xl overflow-hidden transition-all duration-500 transform hover:scale-105 animate-float" style="animation-delay: 1.6s;">
-          <img src="https://placehold.co/600x400/ec4899/ffffff?text=Booking+System" alt="Project 9" class="w-full h-56 object-cover"/>
+          <img src="website_Feast_Food.png" alt="Project 9" class="w-full h-56 object-cover"/>
           <div class="p-8">
-            <h4 class="font-bold text-2xl mb-3 text-gray-900">Sistem Pemesanan Online Terintegrasi</h4>
-            <p class="text-sm gradient-text-luxury font-semibold mb-4">Python/Django | PostgreSQL | Stripe API</p>
+            <h4 class="font-bold text-2xl mb-3 text-gray-900">Sistem Pemesanan Makanan Online Terintegrasi ERP</h4>
+            <p class="text-sm gradient-text-luxury font-semibold mb-4">PHP | JavaScript | MySQL | CSS | HTML</p>
             <p class="text-gray-700 text-sm leading-relaxed">Sistem pemesanan yang canggih dengan manajemen jadwal, pembayaran online, dan notifikasi otomatis untuk berbagai layanan.</p>
           </div>
         </div>
@@ -661,23 +662,23 @@
     <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
       <div class="mb-10">
         <h3 class="text-4xl font-bold text-white mb-4 animate-float">Portfolio</h3>
-        <p class="text-pink-100 text-lg">Wujudkan ide digital Anda bersama kami.</p>
+        <p class="text-amber-100 text-lg">Wujudkan ide digital Anda bersama kami.</p>
       </div>
 
       <div class="flex justify-center space-x-12 mb-12">
         <a href="https://instagram.com/your_instagram" target="_blank" aria-label="Instagram" class="text-white/80 hover:text-pink-400 transition-all duration-300 transform hover:scale-110 hover:-translate-y-2">
           <i class="fab fa-instagram fa-3x"></i>
         </a>
-        <a href="https://wa.me/your_whatsapp_number" target="_blank" aria-label="WhatsApp" class="text-white/80 hover:text-green-400 transition-all duration-300 transform hover:scale-110 hover:-translate-y-2">
+        <a href="https://wa.me/your_whatsapp_number" target="_blank" aria-label="WhatsApp" class="text-white/80 hover:text-teal-400 transition-all duration-300 transform hover:scale-110 hover:-translate-y-2">
           <i class="fab fa-whatsapp fa-3x"></i>
         </a>
-        <a href="mailto:your_email@example.com" aria-label="Gmail" class="text-white/80 hover:text-red-400 transition-all duration-300 transform hover:scale-110 hover:-translate-y-2">
+        <a href="mailto:your_email@example.com" aria-label="Gmail" class="text-white/80 hover:text-amber-400 transition-all duration-300 transform hover:scale-110 hover:-translate-y-2">
           <i class="far fa-envelope fa-3x"></i>
         </a>
       </div>
 
       <div class="border-t border-white/20 pt-8">
-        <p class="text-pink-100 text-sm">&copy; 2025 Portfolio Tim Kreatif. Hak Cipta Dilindungi.</p>
+        <p class="text-amber-100 text-sm">&copy; 2025 Portfolio Tim Kreatif. Hak Cipta Dilindungi.</p>
       </div>
     </div>
   </footer>
@@ -741,10 +742,10 @@
     window.addEventListener('scroll', function() {
       const header = document.querySelector('header');
       if (window.scrollY > 100) {
-        header.style.background = 'linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(252, 231, 243, 0.98) 50%, rgba(248, 250, 252, 0.98) 100%)';
+        header.style.background = 'linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(254, 243, 199, 0.98) 50%, rgba(204, 251, 241, 0.98) 100%)';
         header.style.boxShadow = '0 8px 32px rgba(236, 72, 153, 0.1)';
       } else {
-        header.style.background = 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(252, 231, 243, 0.95) 50%, rgba(248, 250, 252, 0.95) 100%)';
+        header.style.background = 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 243, 199, 0.95) 50%, rgba(204, 251, 241, 0.95) 100%)';
         header.style.boxShadow = '0 4px 6px -1px rgba(236, 72, 153, 0.05)';
       }
     });
